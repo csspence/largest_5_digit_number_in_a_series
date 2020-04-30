@@ -14,6 +14,14 @@ The number will be passed in as a string of only digits. It should return a five
 large as 1000 digits.
 */
 
-function solution(digits){
-  
+const solution = (digits) => {
+  let largest = 0;
+  let digitStr = digits.toString();
+  for(let i = 0; i < digitStr.length - 3; i++) {
+    let num = (digitStr[i] + (digitStr[i+1]) + (digitStr[i+2]) + (digitStr[i+3]) + (digitStr[i+4]));
+    if(Number(num) > largest) {
+      largest = num;
+    }
+  }
+  return largest;
 }
